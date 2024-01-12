@@ -17,11 +17,11 @@ If Cmake is not installed :
 ```
 sudo apt-get -y install cmake
 ```
-## Harmonic sum
+## :construction_worker: Harmonic sum
 Our toy test is the harmonic sum.
-$H_m = \sum_{k=1}^{m} \frac{1}{k} $
-## Methodology
-For $m\in\mathbb{N}$, a program coded in C++ and a program coded in python compute the harmonic sum. In our implementation, $m=10^{n} where $n=9$ is tested.
+$$ H_m = \sum_{k=1}^{m} \frac{1}{k} $$
+## :construction_worker: Methodology
+A program coded in C++ and a program coded in python compute the harmonic sum. In our implementation, m=10^n where n equals to 9 is tested.
 
 ## :construction_worker: Test
 ```
