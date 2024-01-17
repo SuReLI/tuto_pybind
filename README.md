@@ -34,7 +34,7 @@ A program coded in C++ and a program coded in python compute the harmonic sum. I
 
 ## :construction_worker: Test
 ```
-cd harmonic_sum
+cd pybind_examples/harmonic_sum
 mkdir build
 cd build
 cmake ..
@@ -62,7 +62,7 @@ The two matrixes equals to $10*I_{850,850}$. A program is coded in C++ and a pro
 
 ## :construction_worker: Test
 ```
-cd mat_mul_trace
+cd pybind_examples/mat_mul_trace
 mkdir build
 cd build
 cmake ..
