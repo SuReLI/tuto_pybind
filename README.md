@@ -2,15 +2,15 @@
 
 ## :construction_worker: Repo in constuction :construction_worker:
 
-## :construction_worker: Repository Purpose
+## Repository Purpose
 How to integrate C++ code into your Python code in order to make faster programs.
 
-## :construction_worker: Tools used: Pybind11,Cmake
+## Tools used: Pybind11,Cmake
 For more details: [Pybind](https://github.com/pybind/pybind11).
 
 For more details [Cmake](https://cmake.org/).
 
-## :construction_worker: Minimum Requierements (For Linux)
+## Minimum Requierements (For Linux)
 If GCC is not installed :
 ```
 sudo apt install build-essential
@@ -23,16 +23,22 @@ If the repo is not cloned :
 ```
 git clone https://github.com/SuReLI/tuto_pybind.git
 ```
+If the module pybind11 and nanobind is not installed :
+```
+python3 -m venv venv
+source venv/bin/activate
+pip install pybind11 nanobind
+```
 
-## :construction_worker: Function Harmonic sum
+## Pybind11: Function Harmonic sum
 Our toy test is the harmonic sum.
 ```math
  H_m = \sum_{k=1}^{m} \frac{1}{k}
 ```
-## :construction_worker: Methodology
+### Methodology
 A program coded in C++ and a program coded in python compute the harmonic sum. In our implementation, $m=10^n$ where n equals to 9 is tested.
 
-## :construction_worker: Test
+### Test 1
 ```
 cd pybind_examples/harmonic_sum
 mkdir build
@@ -52,15 +58,15 @@ Python powered by C++
 Time Process  7.352s  
 Harmonic sum 22.300481502349225 for n equals to 9  
 
-## :construction_worker: Explanations
+### Explanations
 It is necessary to create a file named 'build'. Initially, the command 'cmake ..' refers to the execution of the CMakeLists.txt. CMakeLists.txt is a file containing all the code needed for CMake to build, generate, and orchestrate the project. Finally, the command line 'make' executes the Makefile outputted by CMake. A .so file is created, and now it is possible to import your C++ function into Python. `harmonic_sum.py` compares the Python code to the bound Python code.
 
-## :construction_worker: OOP Matrix Multiplication,Trace
+## Pybind11: OOP Matrix Multiplication,Trace
 Our toy test is to compute the trace of a dot product between two matrices.
-## :construction_worker: Methodology
+### Methodology
 The two matrixes equals to $10*I_{850,850}$. A program is coded in C++ and a program is coded in Python. We bind the C++ object with Python and compare it to the same object coded in Python.
 
-## :construction_worker: Test
+### Test 2
 ```
 cd pybind_examples/mat_mul_trace
 mkdir build
@@ -85,3 +91,5 @@ Python
 Time Process  52.638s  
 Multiplication, trace result : 72250000 for l,m,n : 850,850,850  
 
+## Nanobind
+You can test the bind between C++ and Python thanks to Nanobind however i find than it is slower compared to Pybind11.
