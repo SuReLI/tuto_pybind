@@ -93,3 +93,27 @@ Multiplication, trace result : 72250000 for l,m,n : 850,850,850
 
 ## Nanobind
 You can test the bind between C++ and Python thanks to Nanobind however i find than it is slower compared to Pybind11.
+
+## Update 
+I added ``` #pragma omp parallel for ``` to my code and my C++ binding was quicker than Numpy.
+
+Python powered by C++
+Time Process  0.098s
+Multiplication, trace result : 72250000.0 for l,m,n : 850,850,850
+
+Python powered by Numpy
+Time Process  0.271s
+Multiplication, trace result : 72250000 for l,m,n : 850,850,850
+
+Python
+Time Process  50.278s
+Multiplication, trace result : 72250000 for l,m,n : 850,850,850
+
+
+Python powered by C++
+Time Process  15.16s
+Multiplication, trace result : 1600000000.0 for l,m,n : 4000,4000,4000
+
+Python powered by Numpy
+Time Process  75.008s
+Multiplication, trace result : 1600000000 for l,m,n : 4000,4000,4000

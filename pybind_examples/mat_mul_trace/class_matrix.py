@@ -30,7 +30,7 @@ class n_Matrix:
     def __init__(self, data):
         self.data = np.array(data)
     def multiply(self, other):
-        return np.dot(self.data,other.data)
+        return self.data@other.data
     def trace(self):
         return np.trace(self)
         
@@ -46,7 +46,7 @@ def time_calculator(custom_class, config: dict)->None:
     print(f"Multiplication, trace result : {result} for l,m,n : {config['l']},{config['m']},{config['n']}\n")
 
 if __name__=="__main__":
-    config = {"l":850,"m":850,"n":850}
+    config = {"l":4000,"m":4000,"n":4000}
 
     print('Python powered by C++')
     time_calculator(c_Matrix,config)
@@ -54,6 +54,6 @@ if __name__=="__main__":
     print('Python powered by Numpy')
     time_calculator(n_Matrix,config)
 
-    print('Python')
-    time_calculator(p_Matrix,config)
+    #print('Python')
+    #time_calculator(p_Matrix,config)
 

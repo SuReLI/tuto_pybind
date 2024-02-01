@@ -10,6 +10,7 @@ Matrix::Matrix() {}
 Matrix Matrix::multiply(const Matrix& other) const {
     Matrix result(std::vector<std::vector<int>>(data.size(), std::vector<int>(other.data[0].size(), 0)));
 
+    #pragma omp parallel for
     for (size_t i = 0; i < data.size(); ++i) {
         for (size_t j = 0; j < other.data[0].size(); ++j) {
             for (size_t k = 0; k < other.data.size(); ++k) {
@@ -23,6 +24,7 @@ Matrix Matrix::multiply(const Matrix& other) const {
 
 double Matrix::trace() const {
     double result = 0;
+    
     for (size_t i = 0; i < data.size(); ++i) {
         result += data[i][i];
     }
